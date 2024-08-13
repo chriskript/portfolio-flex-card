@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="I am a web developer based in Nigeria, specializing in frontend, backend, and WordPress development. I provide top-notch web solutions tailored to your needs. Contact me for your web development needs; HTML, CSS, JavaScript, and ecommerce development services." name="description">
+
+    <meta content="web developer, frontend developer, backend developer, WordPress developer, HTML, CSS, JavaScript, web development, ecommerce developer, e-commerce, nigerian developer, node js, developer, react, wordpress, " name="keywords">
+
+    <meta content="Chriskript" name="author">
+
+     <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon-16x16.png">
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Grey+Qo&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Grey+Qo&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Compiled and minified Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Chriskript | Experienced Web Developer</title>
+</head>
+<body>
+    <div id="container">
+        <div id="left-side" class="cards">
+            <div id="left-inner-left" class="row">
+                <div class="row">
+                    <img src="assets/img/chris_bino.jpg" alt="Chriskript" class="profile-picture">
+                    <h1>Chris jr Nwaije</h1>
+                    <p class="occupation">Web Developer</p>
+
+                    <div class="social-media-icons">
+                        <a href="https://www.facebook.com/chriskript" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/chriskript" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/chriskript" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://github.com/chriskript" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/chriskript" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+    
+                    <div id="chat-box">
+                        <input type="text" id="visitor-name" placeholder="Enter your name" />
+
+                        <button class="btn waves-effect waves-light" type="submit" name="action" onclick="revealRightSide()">Submit
+                            <i class="material-icons right">send</i>
+                          </button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="left-inner-right" class="row">
+                <div id="time-date-time" class="card-pane">
+                    <div id="current-date">Loading date...</div>
+                    <div id="current-time">Loading time...</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="right-side" class="cards hoverable">
+            <h2 id="welcome-message"></h2>
+            <p>Here, I have gathered some of my coolest projects. Each one's a mix of creativity, skill and pure passion.</p>
+            <div id="portfolio" class="row">
+                <!--Portfolio Items here-->
+                <div class="portfolio-tile col s12 m12 l4 hoverable">
+                    <img src="assets/img/portfolio/oneskript_ss.jpg">
+                    <div class="tile-info">
+                        <h3>PDF News Letter</h3>
+                        <p>Description</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-tile col s12 m12 l4 hoverable">
+                    <img src="assets/img/portfolio/Chriskript_logo_BG.png">
+                    <div class="tile-info">
+                        <h3>PDF News Letter</h3>
+                        <p>Description</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-tile col s12 m12 l4 hoverable">
+                    <img src="assets/img/portfolio/Gadis_homepage.jpg">
+                    <div class="tile-info">
+                        <h3>PDF News Letter</h3>
+                        <p>Description</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-tile col s12 m12 l4 hoverable">
+                    <img src="assets/img/portfolio/qr_generatorr.jpg">
+                    <div class="tile-info">
+                        <h3>PDF News Letter</h3>
+                        <p>Description</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-tile col s12 m12 l4 hoverable">
+                    <img src="assets/img/portfolio/zeekitstore.jpg">
+                    <div class="tile-info">
+                        <h3>PDF News Letter</h3>
+                        <p>Description</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-tile col s12 m12 l4 hoverable">
+                    <img src="assets/img/portfolio/stherville_logo.jpg">
+                    <div class="tile-info">
+                        <h3>PDF News Letter</h3>
+                        <p>Description</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
