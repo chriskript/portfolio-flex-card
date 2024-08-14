@@ -12,6 +12,10 @@ body {
     padding: 0;
 }
 
+#menu-button {
+    display: none; /* Hide by default */
+}
+
 /* Mobile Styles */
 @media (max-width: 768px) {
     #container {
