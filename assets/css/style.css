@@ -1,10 +1,64 @@
+html {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: "Josefin Sans", sans-serif;
     font-optical-sizing: auto;
     font-weight: <weight>;
     font-style: normal;
+    margin: 0;
+    padding: 0;
 }
 
+/* Mobile Styles */
+@media (max-width: 768px) {
+    #container {
+        flex-direction: column;
+    }
+
+    #left-side {
+        position: fixed;
+        left: -450px;
+        top: 0;
+        width: 250px;
+        height: 100vh;
+        background-color: #37474f;
+        z-index: 1000;
+        transition: left 0.5s ease-in-out;
+    }
+
+    #right-side {
+        width: 100%;
+        padding: 20px;
+        margin-left: 0;
+    }
+
+    #menu-button {
+        display: block;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 1001;
+        font-size: 30px;
+        color: #f0f0f0;
+    }
+
+    .cards {
+        flex: none;
+        height: auto;
+    }
+
+    .cards:hover {
+        flex: 1;
+    }
+}    
+
+/* When the sidebar is open */
+#left-side.open {
+    left: 0;
+}
 
 #container {
     display: flex;
@@ -91,7 +145,7 @@ h1 {
 
 
 #chat-box {
-    margin-top: 100px;
+    margin-top: 10px;
     padding-left: 20px;
 }
 

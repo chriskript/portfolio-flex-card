@@ -58,3 +58,22 @@ setInterval(updateTime, 1000);
 
 // Initial call to display time immediately
 updateTime();
+
+
+// Mobile Menu
+function toggleSidebar() {
+    const leftSide = document.getElementById('left-side');
+    const menuButton = document.getElementById('menu-button');
+
+    leftSide.classList.toggle('open');
+
+    // Toggle the color of the menu button
+    if (leftSide.classList.contains('open')) {
+        menuButton.style.color = '#37474f';  // Dark color when sidebar is open
+    } else {
+        menuButton.style.color = '#fff';  // White color when sidebar is closed
+    }
+}
+
+document.getElementById('menu-button').addEventListener('click', toggleSidebar);
+
