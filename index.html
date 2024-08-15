@@ -53,8 +53,7 @@
     
                     <div id="chat-box">
                         <input type="text" id="visitor-name" placeholder="Enter your name" />
-
-                        <button class="btn waves-effect waves-light" type="submit" name="action" onclick="revealRightSide()">Submit
+                        <button class="btn waves-effect waves-light" type="submit" name="action" onclick="revealRightSide()">Enter
                             <i class="material-icons right">send</i>
                           </button>
                     </div>
@@ -73,63 +72,79 @@
         <!-- Right Side -->
         <div id="right-side" class="cards hoverable">
             <h2 id="welcome-message"></h2>
-            <p>Here, I have gathered some of my coolest projects. Each one's a mix of creativity, skill and pure passion.</p>
-            <div id="portfolio" class="row">
-                <!--Portfolio Items here-->
-                <div class="portfolio-tile col s12 m12 l4 hoverable">
-                    <img src="assets/img/portfolio/oneskript_ss.jpg">
-                    <div class="tile-info">
-                        <h3>PDF News Letter</h3>
-                        <p>Description</p>
-                    </div>
-                </div>
 
-                <div class="portfolio-tile col s12 m12 l4 hoverable">
-                    <img src="assets/img/portfolio/Chriskript_logo_BG.png">
-                    <div class="tile-info">
-                        <h3>PDF News Letter</h3>
-                        <p>Description</p>
-                    </div>
-                </div>
+            <!-- Start About Me-->
+            <div class="about-section">
+                <h3>A little about me</h3>
+                <p>I'm a self-taught web developer from Nigeria. My journey started in 2016 when I built my first website using Wix. Then I stumbled upon WordPress, and that’s when things really took off for me in web design and development. I wanted more control over what I was creating, so I got into frontend technologies. But being curious, I couldn’t resist checking out how the backend works, which led me to learn Node.js. I love designing and building cool digital experiences that not only look good but also work smoothly and keep people engaged.</p>
 
-                <div class="portfolio-tile col s12 m12 l4 hoverable">
-                    <img src="assets/img/portfolio/Gadis_homepage.jpg">
-                    <div class="tile-info">
-                        <h3>PDF News Letter</h3>
-                        <p>Description</p>
-                    </div>
-                </div>
-
-                <div class="portfolio-tile col s12 m12 l4 hoverable">
-                    <img src="assets/img/portfolio/qr_generatorr.jpg">
-                    <div class="tile-info">
-                        <h3>PDF News Letter</h3>
-                        <p>Description</p>
-                    </div>
-                </div>
-
-                <div class="portfolio-tile col s12 m12 l4 hoverable">
-                    <img src="assets/img/portfolio/zeekitstore.jpg">
-                    <div class="tile-info">
-                        <h3>PDF News Letter</h3>
-                        <p>Description</p>
-                    </div>
-                </div>
-
-                <div class="portfolio-tile col s12 m12 l4 hoverable">
-                    <img src="assets/img/portfolio/stherville_logo.jpg">
-                    <div class="tile-info">
-                        <h3>PDF News Letter</h3>
-                        <p>Description</p>
-                    </div>
-                </div>
-
+                <p>...oh ! did i forget to mention that I also love playing with graphic, UI/UX design and digital tools like GIMP, Inkscape, Canva, Figma, Sketch, Blender and Kapwing</p>
             </div>
+            <hr>
+            <!-- End About Me-->
 
+            <!-- Start Portfolio Section--> 
+            <div class="portfolio-section">
+                <h4>Here, I have gathered some of my coolest projects. Each one's a mix of creativity, skill and pure passion.</h4>
+                <hr>
+                <div id="portfolio" class="row">
+                    <!--Portfolio Items here-->
+                    <div class="portfolio-tile col s12 m12 l4 hoverable">
+                        <img src="assets/img/portfolio/oneskript_ss.jpg">
+                        <div class="tile-info">
+                            <h3>PDF News Letter</h3>
+                            <p>Description</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-tile col s12 m12 l4 hoverable">
+                        <img src="assets/img/portfolio/Chriskript_logo_BG.png">
+                        <div class="tile-info">
+                            <h3>PDF News Letter</h3>
+                            <p>Description</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-tile col s12 m12 l4 hoverable">
+                        <img src="assets/img/portfolio/Gadis_homepage.jpg">
+                        <div class="tile-info">
+                            <h3>PDF News Letter</h3>
+                            <p>Description</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-tile col s12 m12 l4 hoverable">
+                        <img src="assets/img/portfolio/qr_generatorr.jpg">
+                        <div class="tile-info">
+                            <h3>PDF News Letter</h3>
+                            <p>Description</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-tile col s12 m12 l4 hoverable">
+                        <img src="assets/img/portfolio/zeekitstore.jpg">
+                        <div class="tile-info">
+                            <h3>PDF News Letter</h3>
+                            <p>Description</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-tile col s12 m12 l4 hoverable">
+                        <img src="assets/img/portfolio/stherville_logo.jpg">
+                        <div class="tile-info">
+                            <h3>PDF News Letter</h3>
+                            <p>Description</p>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <!-- End Portfolio Section --> 
         </div>
 
     </div>
 
+     <!-- Compiled and minified JavaScript -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
 </html>

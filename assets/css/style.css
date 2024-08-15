@@ -144,13 +144,17 @@ h1 {
 }
 
 .social-media-icons a:hover {
-    color: #4db6ac; /* Color on hover */
+    color: #F5A65B; /* Color on hover */
 }
 
 
 #chat-box {
     margin-top: 10px;
     padding-left: 20px;
+}
+
+.btn {
+    background-color: #F5A65B;
 }
 
 /* Right side CSS starts */
@@ -165,6 +169,12 @@ h1 {
     overflow: scroll;
 }
 
+hr {
+    width: 50%;
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
+
 #welcome-message {
     font-family: "Grey Qo", cursive;
     font-weight: 500;
@@ -177,6 +187,29 @@ h1 {
 #right-side p {
     font-size: 16px;
     padding: 10px 20px;
+}
+
+
+.about-section h3 {
+    text-align: center;
+    color: #f7ebe7
+}
+
+.portfolio-section h4 {
+    text-align: left;
+    font-size: 22px;
+    margin-left: 20px;
+    color: #f7ebe7;
+}
+
+.portfolio-section hr {
+    background-color: #F5A65B;
+    width: 100px;
+    height: 2px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    border: none;
 }
 
 #portfolio {
