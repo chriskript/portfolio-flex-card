@@ -9,6 +9,9 @@
 
     <meta content="Chriskript" name="author">
 
+    <!-- Lightbox CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+
      <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon-32x32.png">
@@ -53,7 +56,7 @@
     
                     <div id="chat-box">
                         <input type="text" id="visitor-name" placeholder="Enter your name" />
-                        <button class="btn waves-effect waves-light" type="submit" name="action" onclick="revealRightSide()">Enter
+                        <button id="left-side-btn" class="btn waves-effect waves-light" type="submit" name="action" onclick="revealRightSide()">Enter
                             <i class="material-icons right">send</i>
                           </button>
                     </div>
@@ -76,72 +79,158 @@
             <!-- Start About Me-->
             <div class="about-section">
                 <h3>A little about me</h3>
+                <hr class="underline">
                 <p>I'm a self-taught web developer from Nigeria. My journey started in 2016 when I built my first website using Wix. Then I stumbled upon WordPress, and that’s when things really took off for me in web design and development. I wanted more control over what I was creating, so I got into frontend technologies. But being curious, I couldn’t resist checking out how the backend works, which led me to learn Node.js. I love designing and building cool digital experiences that not only look good but also work smoothly and keep people engaged.</p>
 
                 <p>...oh ! did i forget to mention that I also love playing with graphic, UI/UX design and digital tools like GIMP, Inkscape, Canva, Figma, Sketch, Blender and Kapwing</p>
             </div>
-            <hr>
+            
             <!-- End About Me-->
 
-            <!-- Start Portfolio Section--> 
-            <div class="portfolio-section">
-                <h4>Here, I have gathered some of my coolest projects. Each one's a mix of creativity, skill and pure passion.</h4>
-                <hr>
-                <div id="portfolio" class="row">
-                    <!--Portfolio Items here-->
-                    <div class="portfolio-tile col s12 m12 l4 hoverable">
-                        <img src="assets/img/portfolio/oneskript_ss.jpg">
-                        <div class="tile-info">
-                            <h3>PDF News Letter</h3>
-                            <p>Description</p>
+            <div class="second-half">
+                <!-- Start Portfolio Section--> 
+                <div class="portfolio-section">
+                    <h4>Here, I have gathered some of my coolest projects. Each one's a mix of creativity, skill and pure passion.</h4>
+                    <hr class="underline">
+                    <div id="portfolio" class="row">
+                        <!--Portfolio Items here-->
+                        <div class="portfolio-tile col s12 m12 l4 hoverable">
+                            <a href="assets/img/portfolio/oneskript_ss.jpg" data-title="Website for Oneskript" data-description="Developed a responsive website for Oneskript Enterprise" data-link="https://example.com/project">
+                                <img src="assets/img/portfolio/oneskript_ss.jpg" alt="website_for_oneskript">
+                            </a>
+                            <div class="tile-info">
+                                <h3>Oneskript Website</h3>
+                                <p>Description</p>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="portfolio-tile col s12 m12 l4 hoverable">
-                        <img src="assets/img/portfolio/Chriskript_logo_BG.png">
-                        <div class="tile-info">
-                            <h3>PDF News Letter</h3>
-                            <p>Description</p>
+                        <div class="portfolio-tile col s12 m12 l4 hoverable">
+                            <a href="assets/img/portfolio/Chriskript_logo_BG.png" data-title="Chriskript Brand" data-description="My brand logo" data-link="#">
+                                <img src="assets/img/portfolio/Chriskript_logo_BG.png" alt="Chriskript logo">
+                            </a>
+                            <div class="tile-info">
+                                <h3>My Brand</h3>
+                                <p>Description</p>
+                            </div>
                         </div>
-                    </div>
+                        
+                        <div class="portfolio-tile col s12 m12 l4 hoverable">
+                            <a href="assets/img/portfolio/Gadis_homepage.jpg" data-title="Website for Gadis" data-description="Website design and development for Gadis Nigeria" data-link="https://gadisnigeria.com">
+                                <img src="assets/img/portfolio/Gadis_homepage.jpg" alt="Website">
+                            </a>
+                            <div class="tile-info">
+                                <h3>Corporate website</h3>
+                                <p>Description</p>
+                            </div>
+                        </div>
 
-                    <div class="portfolio-tile col s12 m12 l4 hoverable">
-                        <img src="assets/img/portfolio/Gadis_homepage.jpg">
-                        <div class="tile-info">
-                            <h3>PDF News Letter</h3>
-                            <p>Description</p>
+                        <div class="portfolio-tile col s12 m12 l4 hoverable">
+                            <a href="assets/img/portfolio/qr_generatorr.jpg" data-title="QR Code Generator" data-description="Simple QR code generator" data-link="#">
+                                <img src="assets/img/portfolio/qr_generatorr.jpg" alt="QR Code Generator">
+                            </a>
+                            <div class="tile-info">
+                                <h3>QR Code Generator</h3>
+                                <p>Description</p>
+                            </div>
                         </div>
-                    </div>
+                        
+                        <div class="portfolio-tile col s12 m12 l4 hoverable">
+                            <a href="assets/img/portfolio/zeekitstore.jpg" data-title="Product Page for Zeekit" data-description="Designed and developed a product page for Zeekit" data-link="https://zeekit.store">
+                                <img src="assets/img/portfolio/zeekitstore.jpg" alt="Product page">
+                            </a>
+                            <div class="tile-info">
+                                <h3>Product Page for Zeekit</h3>
+                                <p>Description</p>
+                            </div>
+                        </div>
+                        
+                        <div class="portfolio-tile col s12 m12 l4 hoverable">
+                            <a href="assets/img/portfolio/stherville_logo.jpg" data-title="PDF News Letter" data-description="Logo design and e-commerce website for Stherville" data-link="#">
+                                <img src="assets/img/portfolio/stherville_logo.jpg" alt="branding">
+                            </a>
+                            <div class="tile-info">
+                                <h3>Branding for Stherville</h3>
+                                <p>Description</p>
+                            </div>
+                        </div>
 
-                    <div class="portfolio-tile col s12 m12 l4 hoverable">
-                        <img src="assets/img/portfolio/qr_generatorr.jpg">
-                        <div class="tile-info">
-                            <h3>PDF News Letter</h3>
-                            <p>Description</p>
-                        </div>
                     </div>
-
-                    <div class="portfolio-tile col s12 m12 l4 hoverable">
-                        <img src="assets/img/portfolio/zeekitstore.jpg">
-                        <div class="tile-info">
-                            <h3>PDF News Letter</h3>
-                            <p>Description</p>
-                        </div>
-                    </div>
-
-                    <div class="portfolio-tile col s12 m12 l4 hoverable">
-                        <img src="assets/img/portfolio/stherville_logo.jpg">
-                        <div class="tile-info">
-                            <h3>PDF News Letter</h3>
-                            <p>Description</p>
-                        </div>
-                    </div>
+                    
                 </div>
             </div> 
-            <!-- End Portfolio Section --> 
+            <!-- End Portfolio Section -->
+            
+            <!-- Start Skills and Tools -->
+            <div class="third">
+                <div class="skills-tools">
+                    <h4>These are the tools and technologies I love to play with</h4>
+                    <hr class="underline">
+                    <div class="skill-icons">
+                        <img src="assets/img/tools/html5_icon.png" alt="HTML5">
+                        <img src="assets/img/tools/css3_icon.png" alt="CSS3">
+                        <img src="assets/img/tools/javascript_icon.png" alt="JavaScript">
+                        <img src="assets/img/tools/nodejs_icon.png" alt="Node.js">
+                        <img src="assets/img/tools/wordpress_icon.png" alt="WordPress">
+                        <img src="assets/img/tools/inkscape_icon.png" alt="Inkscape">
+                        <img src="assets/img/tools/gimp_icon.png" alt="GIMP">
+                    </div>
+                </div>
+            </div>
+            <!-- End Skills and Tools -->
+
+            <!-- Start Contact Me -->
+            <div class="fourth">
+                <h4>Let's get in touch. I'd love to hear from you.</h4>
+                <hr class="underline">
+                <div class="contact-me">
+                    <div class="row">
+                        <div class="col s12 m6 l6">
+                            <div class="input-field">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input id="icon_prefix" type="text" class="validate" required>
+                                <label for="icon_prefix">Name</label>
+                            </div>
+                        </div>
+                        <div class="col s12 m6 l6">
+                            <div class="input-field">
+                                <i class="material-icons prefix">email</i>
+                                <input id="icon_email" type="email" class="validate" required>
+                                <label for="icon_email">Email</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">mode_edit</i>
+                            <textarea id="icon_prefix2" class="materialize-textarea" required></textarea>
+                            <label for="icon_prefix2">Message</label>
+                        </div>
+                    </div>
+                    <div class="row right-align">
+                        <button id="right-side-btn" class="btn waves-effect waves-light" type="submit" name="action" style="display: none;">Submit</button>
+                    </div>
+                </div>
+            </div>
+            <!-- End Contact Me -->
+
+            <div id="custom-lightbox" class="lightbox-overlay">
+                <div class="lightbox-content">
+                    <span class="lightbox-close">&times;</span>
+                    <img id="lightbox-image" src="" alt="Portfolio Image">
+                    <h3 id="lightbox-title"></h3>
+                    <p id="lightbox-description"></p>
+                    <a id="lightbox-link" href="#" target="_blank">View Project</a>
+                </div>
+            </div>
+            
         </div>
 
     </div>
+
+    
+
+    <!-- Lightbox2 JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
 
      <!-- Compiled and minified JavaScript -->
      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

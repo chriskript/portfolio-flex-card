@@ -114,6 +114,7 @@ body {
 .profile-picture {
     height: 100px;
     width: 100px;
+    border: #c7522a solid 1px;
     border-radius: 50%;
     margin: 50px 20px 10px 20px;
 }
@@ -122,6 +123,7 @@ h1 {
     font-size: 22px;
     font-weight: 700;
     padding-left: 20px;
+    color: #37474f;
 }
 
 .occupation {
@@ -129,6 +131,7 @@ h1 {
     font-weight: 500;
     text-transform: uppercase;
     padding-left: 20px;
+    color: #c7522a;
 }
 
 .social-media-icons {
@@ -138,23 +141,24 @@ h1 {
 }
 
 .social-media-icons a {
-    color: #333; 
+    color: #c7522a; 
     font-size: 20px; 
     text-decoration: none;
 }
 
 .social-media-icons a:hover {
-    color: #F5A65B; /* Color on hover */
+    color: #c7522a; /* Color on hover */
 }
 
 
 #chat-box {
+    max-width: 200px;
     margin-top: 10px;
     padding-left: 20px;
 }
 
-.btn {
-    background-color: #F5A65B;
+#left-side-btn {
+    background-color: #c7522a;
 }
 
 /* Right side CSS starts */
@@ -170,9 +174,12 @@ h1 {
 }
 
 hr {
-    width: 50%;
+    width: 30%;
+    height: 2px;
     margin-top: 40px;
     margin-bottom: 60px;
+    background-color: #c7522a;
+    border: none;
 }
 
 #welcome-message {
@@ -187,29 +194,38 @@ hr {
 #right-side p {
     font-size: 16px;
     padding: 10px 20px;
+    color: #f0f0f0;
 }
 
 
 .about-section h3 {
-    text-align: center;
-    color: #f7ebe7
+    padding-left: 22px;
+    color: #F5A65B
 }
 
-.portfolio-section h4 {
-    text-align: left;
-    font-size: 22px;
-    margin-left: 20px;
-    color: #f7ebe7;
-}
-
-.portfolio-section hr {
-    background-color: #F5A65B;
+.underline {
+    background-color: #c7522a;
     width: 100px;
     height: 2px;
     margin-top: 10px;
     margin-bottom: 10px;
     margin-left: 20px;
     border: none;
+}
+
+.second-half {
+    width: 100%;
+    background-color: #f0f0f0;
+    padding: 40px;
+    overflow: hidden;
+}
+
+.portfolio-section h4 {
+    text-align: left;
+    font-size: 22px;
+    margin-left: 20px;
+    margin-top: 30px;
+    color: #37474f;
 }
 
 #portfolio {
@@ -238,6 +254,201 @@ hr {
 
 .tile-info h3 {
     font-size: 20px;
+}
+
+/* Skills and Tools Section */
+.skills-tools {
+    text-align: left;
+    padding: 45px;
+    background-color: #f0f0f0;
+}
+
+.skills-tools h4 {
+    font-size: 24px;
+    color: #37474f;
+    margin-bottom: 20px;
+}
+
+.skill-icons {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.skill-icons img {
+    width: 80px;
+    height: 80px;
+    padding: 20px;
+    border-radius: 50%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-icons img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.fourth {
+    margin-top: 50px;
+    padding: 20px;
+    overflow: hidden;
+
+}
+
+.fourth h4 {
+    font-size: 24px;
+    color: #F5A65B;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+/* Style input fields on focus */
+.input-field input[type="text"]:focus,
+.input-field input[type="email"]:focus,
+.input-field textarea:focus {
+    border-bottom: 1px solid #F5A65B !important;
+    box-shadow: 0 1px 0 0 #F5A65B !important;
+    color: #fff; /* Optional: change text color if needed */
+}
+
+/* Style label on focus */
+.input-field input[type="text"]:focus + label,
+.input-field input[type="email"]:focus + label,
+.input-field textarea:focus + label {
+    color: #F5A65B !important;
+}
+
+/* Style icons on focus */
+.input-field i.prefix {
+    color: #f9f9f9; /* Default icon color */
+}
+
+/* Change icon color when the input field is focused */
+.input-field input[type="text"]:focus ~ i.prefix,
+.input-field input[type="email"]:focus ~ i.prefix,
+.input-field textarea:focus ~ i.prefix {
+    color: #F5A65B !important;
+}
+
+.material-icons {
+    color: #F5A65B !important;
+}
+
+.btn {
+    background-color: #c7522a !important;
+}
+
+.btn:hover {
+    background-color: #F5A65B !important;
+}
+
+.right-align {
+    text-align: right;
+}
+
+/* Lightbox Overlay */
+.lightbox-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Transparent background */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Lightbox Content */
+.lightbox-content {
+    position: relative;
+    width: 35%;
+    max-width: 1000px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.lightbox-content img {
+    max-width: 100%;
+    height: auto;
+    padding: 10px;
+}
+
+/* Close Button */
+.lightbox-close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 2em;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Title, Description, and Link */
+#lightbox-title {
+    margin-top: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+}
+
+#lightbox-description {
+    margin: 10px 0;
+    font-size: 1em;
+    color: #37474f !important;
+}
+
+#lightbox-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #c7522a;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+#lightbox-link:hover {
+    background-color: #d4843d;
+}
+
+/* Adjustments for Mobile Devices */
+@media only screen and (max-width: 768px) {
+    .lightbox-content {
+        width: 90%;  /* Lightbox takes 90% of the screen width on mobile */
+        padding: 10px; /* Less padding on mobile */
+    }
+
+    .lightbox-content img {
+        max-height: 300px;  /* Limit image height on mobile to ensure it fits */
+        object-fit: contain;
+    }
+
+    #lightbox-title {
+        font-size: 1.2em; /* Smaller title font size on mobile */
+    }
+
+    #lightbox-description {
+        font-size: 0.9em; /* Smaller description font size on mobile */
+    }
+
+    #lightbox-link {
+        padding: 8px 15px; /* Smaller padding for the button on mobile */
+        font-size: 0.9em;  /* Smaller button font size on mobile */
+    }
+
+    /* Adjust the close button */
+    .lightbox-close {
+        top: 5px;
+        right: 10px;
+        font-size: 1.5em; /* Smaller close button */
+    }
 }
 
 

@@ -77,3 +77,67 @@ function toggleSidebar() {
 
 document.getElementById('menu-button').addEventListener('click', toggleSidebar);
 
+// Reveal Form Button
+document.addEventListener('input', function() {
+    const nameInput = document.getElementById('icon_prefix');
+    const emailInput = document.getElementById('icon_email');
+    const messageInput = document.getElementById('icon_prefix2');
+    const submitButton = document.getElementById('right-side-btn');
+
+    const name = nameInput.value.trim();
+    const email = emailInput.value.trim();
+    const message = messageInput.value.trim();
+
+    if (name && email && message) {
+        submitButton.style.display = 'inline-block';
+        nameInput.style.color = '#F5A65B';
+        emailInput.style.color = '#F5A65B';
+        messageInput.style.color = '#F5A65B';
+    } else {
+        submitButton.style.display = 'none';
+        nameInput.style.color = '';
+        emailInput.style.color = '';
+        messageInput.style.color = '';
+    }
+});
+
+// Get lightbox elements
+const lightbox = document.getElementById('custom-lightbox');
+const lightboxImage = document.getElementById('lightbox-image');
+const lightboxTitle = document.getElementById('lightbox-title');
+const lightboxDescription = document.getElementById('lightbox-description');
+const lightboxLink = document.getElementById('lightbox-link');
+const closeBtn = document.querySelector('.lightbox-close');
+
+// Portfolio items with data attributes
+const portfolioItems = document.querySelectorAll('.portfolio-tile a');
+
+portfolioItems.forEach(item => {
+    item.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const imgSrc = this.getAttribute('href');
+        const title = this.dataset.title;
+        const description = this.dataset.description;
+        const link = this.dataset.link;
+        
+        lightboxImage.src = imgSrc;
+        lightboxTitle.textContent = title;
+        lightboxDescription.textContent = description;
+        lightboxLink.href = link;
+        
+        lightbox.style.display = 'flex'; // Show lightbox
+    });
+});
+
+// Close lightbox
+closeBtn.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+});
+
+// Close lightbox when clicking outside content
+lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+    }
+});
