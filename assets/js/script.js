@@ -60,15 +60,18 @@ setInterval(updateTime, 1000);
 updateTime();
 
 
-// Mobile Menu
+// Sidebar Toggle Function
 function toggleSidebar() {
     const leftSide = document.getElementById('left-side');
     const menuButton = document.getElementById('menu-button');
 
     leftSide.classList.toggle('open');
 
+    const isOpen = leftSide.classList.contains('open');
+    menuButton.setAttribute('aria-expanded', isOpen.toString());
+
     // Toggle the color of the menu button
-    if (leftSide.classList.contains('open')) {
+    if (isOpen) {
         menuButton.style.color = '#37474f';  // Dark color when sidebar is open
     } else {
         menuButton.style.color = '#fff';  // White color when sidebar is closed
@@ -77,7 +80,19 @@ function toggleSidebar() {
 
 document.getElementById('menu-button').addEventListener('click', toggleSidebar);
 
-// Reveal Form Button
+// Adding ARIA attributes to menu button
+document.getElementById('menu-button').setAttribute('aria-label', 'Toggle Menu');
+document.getElementById('menu-button').setAttribute('aria-controls', 'left-side');
+
+// Keyboard Accessibility for Sidebar
+document.getElementById('menu-button').addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        toggleSidebar();
+    }
+});
+
+
+// Email Format Validation
 document.addEventListener('input', function() {
     const nameInput = document.getElementById('icon_prefix');
     const emailInput = document.getElementById('icon_email');
@@ -87,8 +102,9 @@ document.addEventListener('input', function() {
     const name = nameInput.value.trim();
     const email = emailInput.value.trim();
     const message = messageInput.value.trim();
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Simple email format check
 
-    if (name && email && message) {
+    if (name && emailPattern.test(email) && message) {
         submitButton.style.display = 'inline-block';
         nameInput.style.color = '#F5A65B';
         emailInput.style.color = '#F5A65B';
@@ -141,3 +157,38 @@ lightbox.addEventListener('click', (e) => {
         lightbox.style.display = 'none';
     }
 });
+
+// async function getWeather() {
+//     if (navigator.geolocation) {
+//         navigator.geolocation.getCurrentPosition(async position => {
+//             const lat = position.coords.latitude;
+//             const lon = position.coords.longitude;
+//             const apiKey = 'YOUR_API_KEY'; // Replace with your API key
+//             const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+
+//             try {
+//                 const response = await fetch(url);
+//                 const data = await response.json();
+
+//                 const weatherDescription = data.weather[0].description;
+//                 const temp = data.main.temp;
+//                 const icon = `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
+
+//                 document.getElementById('weather-data').innerHTML = `
+//                     <div>
+//                         <img src="${icon}" alt="Weather Icon">
+//                         <p>${temp}°C, ${weatherDescription}</p>
+//                     </div>`;
+//             } catch (error) {
+//                 console.error('Error fetching weather data:', error);
+//                 document.getElementById('weather-data').textContent = 'Unable to load weather data';
+//             }
+//         });
+//     } else {
+//         document.getElementById('weather-data').textContent = 'Geolocation not supported';
+//     }
+// }
+
+// // Call getWeather on page load
+// getWeather();
+
