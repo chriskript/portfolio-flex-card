@@ -15,15 +15,27 @@ function getGreeting() {
     return timeOfDay;
 }
 
-function revealRightSide() {
+function showInitialGreeting() {
     const greeting = getGreeting();
-    const visitorName = document.getElementById("visitor-name").value;
-    const welcomeMessage = `${greeting} ${visitorName}\nWelcome to my portfolio`;
-
-    document.getElementById("welcome-message").innerText = welcomeMessage;
-
-    document.getElementById("chat-box").style.display = "none";
+    const initialMessage = `${greeting}`;
+    document.getElementById("initial-greeting").innerText = initialMessage;
+    document.getElementById("welcome-message").style.display = "none";
 }
+
+function revealRightSide() {
+    const visitorName = document.getElementById("visitor-name").value;
+
+    if (visitorName) {
+        const greeting = getGreeting();
+        const welcomeMessage = `${greeting} ${visitorName}, welcome to my portfolio.`;
+
+        document.getElementById("welcome-message").innerText = welcomeMessage;
+        document.getElementById("welcome-message").style.display = "block"; // Show welcome message
+        document.getElementById("initial-greeting").style.display = "none"; // Hide initial greeting
+        document.getElementById("chat-box").style.display = "none"; // Hide chat box
+    }
+}
+    
 
 // Current Date Function
 function updateDate() {
@@ -59,22 +71,36 @@ setInterval(updateTime, 1000);
 // Initial call to display time immediately
 updateTime();
 
+// Function to handle scroll events
+function handleScroll() {
+    const navbar = document.getElementById('navbar');
+
+    if (window.scrollY > 40) { // Adjust this value to determine when to reduce the height}
+        navbar.classList.add('navbar-shrink');
+    } else {
+        navbar.classList.remove('navbar-shrink');
+    }
+}
+
+// Add scroll event listener
+window.addEventListener('scroll', handleScroll);
 
 // Sidebar Toggle Function
 function toggleSidebar() {
     const leftSide = document.getElementById('left-side');
     const menuButton = document.getElementById('menu-button');
+    const menuIcon = document.getElementById('menu-icon');
 
     leftSide.classList.toggle('open');
 
     const isOpen = leftSide.classList.contains('open');
     menuButton.setAttribute('aria-expanded', isOpen.toString());
 
-    // Toggle the color of the menu button
+    // Toggle the icon btw menu and close
     if (isOpen) {
-        menuButton.style.color = '#37474f';  // Dark color when sidebar is open
+        menuIcon.textContent = 'close'; // Change to close icon
     } else {
-        menuButton.style.color = '#fff';  // White color when sidebar is closed
+        menuIcon.textContent = 'menu' // Change back to menu icon
     }
 }
 
@@ -157,6 +183,17 @@ lightbox.addEventListener('click', (e) => {
         lightbox.style.display = 'none';
     }
 });
+
+document.getElementById('load-more-btn').addEventListener('click', function() {
+    const hiddenItems = document.querySelectorAll('.hidden-item');
+    hiddenItems.forEach(item => {
+        item.style.display = 'block'; // Reveal hidden items
+    });
+
+    // Optionally, hide the button after all items are revealed
+    this.style.display = 'none';
+});
+
 
 // async function getWeather() {
 //     if (navigator.geolocation) {

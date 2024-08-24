@@ -32,9 +32,21 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Chriskript | Experienced Web Developer</title>
 </head>
-<body>
-    <!--Sidebar Toggle Button-->
-    <i id="menu-button" class="material-icons">menu</i>
+<body onload="showInitialGreeting()">
+    <!-- Sticky Navbar for Mobile -->
+    <nav id="navbar" class="navbar sticky">
+        <div class="nav-wrapper">
+            <!-- Logo -->
+            <a href="#" class="brand-logo">
+                <img src="assets/img/logo_chriskript_900x300.png" alt="Logo" id="navbar-logo">
+            </a>
+
+            <!-- Menu Button -->
+            <a href="#" id="menu-button" class="menu-button right">
+                <i class="material-icons" id="menu-icon">menu</i>
+            </a>
+        </div>
+    </nav>
 
     <div id="container">
         <div id="left-side" class="cards">
@@ -55,6 +67,7 @@
                     </div>
     
                     <div id="chat-box">
+                        <p>Hello, what's your name?</p>
                         <input type="text" id="visitor-name" placeholder="Enter your name" />
                         <button id="left-side-btn" class="btn waves-effect waves-light" type="submit" name="action" onclick="revealRightSide()">Enter
                             <i class="material-icons right">send</i>
@@ -75,10 +88,11 @@
         
         <!-- Right Side -->
         <div id="right-side" class="cards hoverable">
+            <h2 id="initial-greeting" style="font-size: 1.5rem;"></h2>
             <h2 id="welcome-message"></h2>
 
             <div class="animated-icon">
-                <video autoplay loop muted>
+                <video autoplay loop muted controlsList="nodownload">
                     <source src="assets/img/tools/hacker.mp4" type="video/mp4">
                 </video>
             </div>
@@ -102,8 +116,8 @@
                     <div id="portfolio" class="row">
                         <!--Portfolio Items here-->
                         <div class="portfolio-tile col s12 m12 l4 hoverable">
-                            <a href="assets/img/portfolio/oneskript_ss.jpg" data-title="Website for Oneskript" data-description="Developed a responsive website for Oneskript Enterprise" data-link="https://example.com/project">
-                                <img src="assets/img/portfolio/oneskript_ss.jpg" alt="website_for_oneskript">
+                            <a href="assets/img/portfolio/oneskript_ss.jpg" data-title="Website for Oneskript" data-description="Developed a responsive website for Oneskript Enterprise" data-link="https://oneskript-inc.github.io/oneskript/index.html">
+                                <img src="assets/img/portfolio/oneskript_ss.jpg" loading="lazy" alt="website_for_oneskript">
                             </a>
                             <div class="tile-info">
                                 <h3>Oneskript Website</h3>
@@ -113,17 +127,27 @@
 
                         <div class="portfolio-tile col s12 m12 l4 hoverable">
                             <a href="assets/img/portfolio/Chriskript_logo_BG.png" data-title="Chriskript Brand" data-description="My brand logo" data-link="#">
-                                <img src="assets/img/portfolio/Chriskript_logo_BG.png" alt="Chriskript logo">
+                                <img src="assets/img/portfolio/Chriskript_logo_BG.png" loading="lazy" alt="Chriskript logo">
                             </a>
                             <div class="tile-info">
                                 <h3>My Brand</h3>
                                 <p>Description</p>
                             </div>
                         </div>
+
+                        <div class="portfolio-tile col s12 m12 l4 hoverable">
+                            <a href="assets/img/portfolio/Isionique-Deluxe.jpg" data-title="E-commerce website for Isionique Deluxe" data-description="Developed a responsive website for Oneskript Enterprise" data-link="https://isdeluxe.com/">
+                                <img src="assets/img/portfolio/Isionique-Deluxe.jpg" loading="lazy" alt="website_for_isdeluxe">
+                            </a>
+                            <div class="tile-info">
+                                <h3>Isdeluxe</h3>
+                                <p>Description</p>
+                            </div>
+                        </div>
                         
                         <div class="portfolio-tile col s12 m12 l4 hoverable">
                             <a href="assets/img/portfolio/Gadis_homepage.jpg" data-title="Website for Gadis" data-description="Website design and development for Gadis Nigeria" data-link="https://gadisnigeria.com">
-                                <img src="assets/img/portfolio/Gadis_homepage.jpg" alt="Website">
+                                <img src="assets/img/portfolio/Gadis_homepage.jpg" loading="lazy" alt="Website">
                             </a>
                             <div class="tile-info">
                                 <h3>Corporate website</h3>
@@ -132,8 +156,49 @@
                         </div>
 
                         <div class="portfolio-tile col s12 m12 l4 hoverable">
-                            <a href="assets/img/portfolio/qr_generatorr.jpg" data-title="QR Code Generator" data-description="Simple QR code generator" data-link="#">
-                                <img src="assets/img/portfolio/qr_generatorr.jpg" alt="QR Code Generator">
+                            <a href="assets/img/portfolio/stherville_logo.jpg" data-title="Branding for Stherville" data-description="Logo design and e-commerce website for Stherville" data-link="https://www.facebook.com/stherville/">
+                                <img src="assets/img/portfolio/stherville_logo.jpg" loading="lazy" alt="branding">
+                            </a>
+                            <div class="tile-info">
+                                <h3>Branding for Stherville</h3>
+                                <p>Description</p>
+                            </div>
+                        </div>
+                        
+                        <div class="portfolio-tile col s12 m12 l4 hoverable">
+                            <a href="assets/img/portfolio/zeekitstore.jpg" data-title="Product Page for Zeekit" data-description="Designed and developed a product page for Zeekit" data-link="https://zeekit.store">
+                                <img src="assets/img/portfolio/zeekitstore.jpg" loading="lazy" alt="Product page">
+                            </a>
+                            <div class="tile-info">
+                                <h3>Product Page for Zeekit</h3>
+                                <p>Description</p>
+                            </div>
+                        </div>
+
+                        <!--Hidden Portfolio Items (initially hidden with a class)-->
+                        <div class="portfolio-tile col s12 m12 l4 hoverable hidden-item">
+                            <a href="assets/img/portfolio/mx_engineering.jpg" data-title="Mx Engineering Website" data-description="Website design and development for an Engineering Consulting Company" data-link="https://mxengineeringserv.com">
+                                <img src="assets/img/portfolio/mx_engineering.jpg" loading="lazy" alt="snapshot of mx_engineering website">
+                            </a>
+                            <div class="tile-info">
+                                <h3>Website for Mx Engineering</h3>
+                                <p>Description</p>
+                            </div>
+                        </div>
+
+                        <div class="portfolio-tile col s12 m12 l4 hoverable hidden-item">
+                            <a href="assets/img/portfolio/mx_eng_logo.jpg" data-title="Company Logo" data-description="Designed a comapny logo for mx_engineering" data-link="https://mx_engineeringserv.com">
+                                <img src="assets/img/portfolio/mx_eng_logo.jpg" loading="lazy" alt="comapny logo">
+                            </a>
+                            <div class="tile-info">
+                                <h3>Logo for Mx Engineering</h3>
+                                <p>Description</p>
+                            </div>
+                        </div>
+
+                        <div class="portfolio-tile col s12 m12 l4 hoverable hidden-item">
+                            <a href="assets/img/portfolio/qr_generatorr.jpg" data-title="QR Code Generator" data-description="Simple QR code generator" data-link="https://github.com/chriskript/qr-image-generator">
+                                <img src="assets/img/portfolio/qr_generatorr.jpg" loading="lazy" alt="QR Code Generator">
                             </a>
                             <div class="tile-info">
                                 <h3>QR Code Generator</h3>
@@ -141,26 +206,21 @@
                             </div>
                         </div>
                         
-                        <div class="portfolio-tile col s12 m12 l4 hoverable">
-                            <a href="assets/img/portfolio/zeekitstore.jpg" data-title="Product Page for Zeekit" data-description="Designed and developed a product page for Zeekit" data-link="https://zeekit.store">
-                                <img src="assets/img/portfolio/zeekitstore.jpg" alt="Product page">
+                        <div class="portfolio-tile col s12 m12 l4 hoverable hidden-item">
+                            <a href="assets/img/portfolio/insidemouau.jpg" data-title="Branding for Mouaucampusstyle" data-description="Logo design, blog and social media branding" data-link="https://www.instagram.com/mouaucampusstyle">
+                                <img src="assets/img/portfolio/insidemouau.jpg" loading="lazy" alt="branding">
                             </a>
                             <div class="tile-info">
-                                <h3>Product Page for Zeekit</h3>
-                                <p>Description</p>
-                            </div>
-                        </div>
-                        
-                        <div class="portfolio-tile col s12 m12 l4 hoverable">
-                            <a href="assets/img/portfolio/stherville_logo.jpg" data-title="PDF News Letter" data-description="Logo design and e-commerce website for Stherville" data-link="#">
-                                <img src="assets/img/portfolio/stherville_logo.jpg" alt="branding">
-                            </a>
-                            <div class="tile-info">
-                                <h3>Branding for Stherville</h3>
+                                <h3>Branding for Mouaucampusstyle</h3>
                                 <p>Description</p>
                             </div>
                         </div>
 
+                    </div>
+
+                    <!-- Load More Button -->
+                    <div class="center-align">
+                        <button id="load-more-btn" class="btn waves-effect waves-light">Load More</button>
                     </div>
                     
                 </div>
@@ -171,7 +231,7 @@
             <div class="third">
                 <div class="skills-tools">
                     <div class="animated-icon">
-                        <video autoplay loop muted>
+                        <video autoplay loop muted controlsList="nodownload">
                             <source src="assets/img/tools/boss.mp4" type="video/mp4">
                         </video>
                     </div>
@@ -195,7 +255,7 @@
             <!-- Start Contact Me -->
             <div class="fourth">
                 <div class="animated-icon">
-                    <video autoplay loop muted>
+                    <video autoplay loop muted controlsList="nodownload">
                         <source src="assets/img/tools/email.mp4" type="video/mp4">
                     </video>
                 </div>
@@ -249,10 +309,10 @@
     
 
     <!-- Lightbox2 JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js" defer></script>
 
      <!-- Compiled and minified JavaScript -->
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" defer></script>
     <script src="assets/js/script.js"></script>
 </body>
 </html>
